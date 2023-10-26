@@ -1,5 +1,3 @@
-# Name: Lisa Jurca
-# CS 110
 # Project 1: DNA analysis
 
 # This program reads DNA sequencer output and computes statistics, such as
