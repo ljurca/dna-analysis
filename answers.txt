@@ -1,0 +1,47 @@
+Name: Lisa Jurca
+CS 110
+Project 1 
+
+For each problem that requires a written answer, write (or copy-and-paste)
+your answers in this file.  When you are done, you should have replaced all
+the ellipses (the three dots) with your answers.
+
+At the end, you will turn in this file along with your modified
+dna_analysis.py program.
+
+Part 1a:
+
+(No answers in this section.)
+
+Part 1b:
+
+...
+
+Part 2a:
+AT-content: 0.5694001293886175
+
+Part 2b:
+G-count: 6103168
+C-count: 6075218
+A-count: 7467696
+T-count: 7331353
+
+Part 2c:
+Sum count:  39840
+Total count:  40000
+Seq length:  40000
+
+Explanation:
+I began the comparison of the metrics by creating three print statements: one showing the sum, one showing the length of the sequence, and one showing total_count. I noticed that the sum is different from total_count and the length of the sequence. I opened up one of the data files, and noticed that in sample_1, there were a lot of symbols in the sequence that were not G, C, A, or T. I then checked back on dna_analysis.py and realized that total_count is increasing during each iteration of the sequence, regardless of the characters G, C, A, or T being present. This causes the sum of the nucleotides to be inequivalent to total_count. 
+
+The variable total_count is under "for bp in seq:", and is increasing unconditionally. This means that total_count is increasing regardless of the characters in the sequence. However, the count of each nucleotide is conditional, as an "if" statement is placed to signify the increase of each count variable. The sum is all of these nucleotides added together, which means the sum will not be the same as total_count and the length of the sequence. The variables that make up the sum increase conditionally, while the length of the sequence and total_count increase during each iteration.
+
+The variable gc_content represents the percentage of GC base pairs in a sample. To correctly calculate this, the count of GC base pairs must first occur. This is represented by the variable gc_count and conditionally increases when an "if" statement counted a G or C. However, to calculate the percent, the gc_count must be divided by the sum of the nucleotides. Previously, total_count was the denominator for gc_content. This is not correct because total_count represents each iteration of the sequence, which includes many symbols that are not G, C, A, or T. Instead, the denominator of gc_content should be the sum of g_count, c_count, a_count, and t_count. If the denominator was total_count or the length of the sequence, the GC content would be misrepresented because both of these variables represent an iteration of the sequence, not the sum. 
+
+
+Part 2d:
+AT/GC ratio:  1.8747694717356433
+
+Part 2e:
+GC Classification: moderate GC content 
+
